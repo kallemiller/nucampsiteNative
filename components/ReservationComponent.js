@@ -34,12 +34,14 @@ class Reservation extends Component {
         });
     }
 
-    beginSearchAlert = () => 
+    beginSearchAlert = () => {
+        const message = 
+            `Number of Campers: ${this.state.campers} 
+            \nHike-In? ${this.state.hikeIn}   
+            \nDate: ${this.state.date.toLocaleDateString()}`;
         Alert.alert(
-            "Begin Search?",
-            "Number of Campers: " + this.state.campers +
-            "\nHike-In? " + this.state.hikeIn +
-            "\nDate: " + this.state.date.toLocaleDateString(),
+            'Begin Search?',
+            message,
             [
                 {
                     text: 'Cancel',
@@ -52,7 +54,7 @@ class Reservation extends Component {
                 },
             ],
             { cancelable: false }
-        );
+        )};
 
     render() {
         return (
